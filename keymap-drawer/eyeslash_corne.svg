@@ -531,14 +531,14 @@ rect.held, rect.combo.held {
 <text x="140" y="48" class="combo hold">2s</text>
 </g>
 <g class="combo combopos-1">
-<rect rx="6" ry="6" x="182" y="99" width="28" height="26" class="combo"/>
-<use href="#mdi:content-copy" xlink:href="#mdi:content-copy" x="187" y="103" height="18" width="18.0" class="combo tap glyph mdi:content-copy"/>
-<text x="196" y="101" class="combo shifted">TERM</text>
+<rect rx="6" ry="6" x="154" y="102" width="28" height="26" class="combo"/>
+<use href="#mdi:content-copy" xlink:href="#mdi:content-copy" x="159" y="106" height="18" width="18.0" class="combo tap glyph mdi:content-copy"/>
+<text x="168" y="104" class="combo shifted">TERM</text>
 </g>
 <g class="combo combopos-2">
-<rect rx="6" ry="6" x="294" y="112" width="28" height="26" class="combo"/>
-<use href="#mdi:content-paste" xlink:href="#mdi:content-paste" x="299" y="116" height="18" width="18.0" class="combo tap glyph mdi:content-paste"/>
-<text x="308" y="114" class="combo shifted">TERM</text>
+<rect rx="6" ry="6" x="266" y="109" width="28" height="26" class="combo"/>
+<use href="#mdi:content-paste" xlink:href="#mdi:content-paste" x="271" y="113" height="18" width="18.0" class="combo tap glyph mdi:content-paste"/>
+<text x="280" y="111" class="combo shifted">TERM</text>
 </g>
 </g>
 </g>
@@ -811,14 +811,14 @@ rect.held, rect.combo.held {
 <text x="140" y="48" class="combo hold">2s</text>
 </g>
 <g class="combo combopos-1">
-<rect rx="6" ry="6" x="182" y="99" width="28" height="26" class="combo"/>
-<use href="#mdi:content-copy" xlink:href="#mdi:content-copy" x="187" y="103" height="18" width="18.0" class="combo tap glyph mdi:content-copy"/>
-<text x="196" y="101" class="combo shifted">TERM</text>
+<rect rx="6" ry="6" x="154" y="102" width="28" height="26" class="combo"/>
+<use href="#mdi:content-copy" xlink:href="#mdi:content-copy" x="159" y="106" height="18" width="18.0" class="combo tap glyph mdi:content-copy"/>
+<text x="168" y="104" class="combo shifted">TERM</text>
 </g>
 <g class="combo combopos-2">
-<rect rx="6" ry="6" x="294" y="112" width="28" height="26" class="combo"/>
-<use href="#mdi:content-paste" xlink:href="#mdi:content-paste" x="299" y="116" height="18" width="18.0" class="combo tap glyph mdi:content-paste"/>
-<text x="308" y="114" class="combo shifted">TERM</text>
+<rect rx="6" ry="6" x="266" y="109" width="28" height="26" class="combo"/>
+<use href="#mdi:content-paste" xlink:href="#mdi:content-paste" x="271" y="113" height="18" width="18.0" class="combo tap glyph mdi:content-paste"/>
+<text x="280" y="111" class="combo shifted">TERM</text>
 </g>
 </g>
 </g>
@@ -1078,14 +1078,14 @@ rect.held, rect.combo.held {
 <text x="140" y="48" class="combo hold">2s</text>
 </g>
 <g class="combo combopos-1">
-<rect rx="6" ry="6" x="182" y="99" width="28" height="26" class="combo"/>
-<use href="#mdi:content-copy" xlink:href="#mdi:content-copy" x="187" y="103" height="18" width="18.0" class="combo tap glyph mdi:content-copy"/>
-<text x="196" y="101" class="combo shifted">TERM</text>
+<rect rx="6" ry="6" x="154" y="102" width="28" height="26" class="combo"/>
+<use href="#mdi:content-copy" xlink:href="#mdi:content-copy" x="159" y="106" height="18" width="18.0" class="combo tap glyph mdi:content-copy"/>
+<text x="168" y="104" class="combo shifted">TERM</text>
 </g>
 <g class="combo combopos-2">
-<rect rx="6" ry="6" x="294" y="112" width="28" height="26" class="combo"/>
-<use href="#mdi:content-paste" xlink:href="#mdi:content-paste" x="299" y="116" height="18" width="18.0" class="combo tap glyph mdi:content-paste"/>
-<text x="308" y="114" class="combo shifted">TERM</text>
+<rect rx="6" ry="6" x="266" y="109" width="28" height="26" class="combo"/>
+<use href="#mdi:content-paste" xlink:href="#mdi:content-paste" x="271" y="113" height="18" width="18.0" class="combo tap glyph mdi:content-paste"/>
+<text x="280" y="111" class="combo shifted">TERM</text>
 </g>
 </g>
 </g>
@@ -1344,14 +1344,14 @@ rect.held, rect.combo.held {
 <text x="140" y="48" class="combo hold">2s</text>
 </g>
 <g class="combo combopos-1">
-<rect rx="6" ry="6" x="182" y="99" width="28" height="26" class="combo"/>
-<use href="#mdi:content-copy" xlink:href="#mdi:content-copy" x="187" y="103" height="18" width="18.0" class="combo tap glyph mdi:content-copy"/>
-<text x="196" y="101" class="combo shifted">TERM</text>
+<rect rx="6" ry="6" x="154" y="102" width="28" height="26" class="combo"/>
+<use href="#mdi:content-copy" xlink:href="#mdi:content-copy" x="159" y="106" height="18" width="18.0" class="combo tap glyph mdi:content-copy"/>
+<text x="168" y="104" class="combo shifted">TERM</text>
 </g>
 <g class="combo combopos-2">
-<rect rx="6" ry="6" x="294" y="112" width="28" height="26" class="combo"/>
-<use href="#mdi:content-paste" xlink:href="#mdi:content-paste" x="299" y="116" height="18" width="18.0" class="combo tap glyph mdi:content-paste"/>
-<text x="308" y="114" class="combo shifted">TERM</text>
+<rect rx="6" ry="6" x="266" y="109" width="28" height="26" class="combo"/>
+<use href="#mdi:content-paste" xlink:href="#mdi:content-paste" x="271" y="113" height="18" width="18.0" class="combo tap glyph mdi:content-paste"/>
+<text x="280" y="111" class="combo shifted">TERM</text>
 </g>
 </g>
 </g>
