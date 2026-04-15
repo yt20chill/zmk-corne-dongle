@@ -77,14 +77,14 @@
         combo_term_copy {
             timeout-ms = <50>;
             key-positions = <16 31>; // S and C keys
-            bindings = <&kp LC(LS(C))>;
+            bindings = <&kp LG(LS(C))>;
             layers = <0>;
         };
 
         combo_term_paste {
             timeout-ms = <50>;
             key-positions = <18 33>; // G and V keys
-            bindings = <&kp LC(LS(V))>;
+            bindings = <&kp LG(LS(V))>;
             layers = <0>;
         };
     };
@@ -96,7 +96,7 @@
             display-name = "COLEMAK";
             bindings = <
 &none  &kp Q         &kp W        &kp F         &kp P          &kp B                              &none                 &kp J          &kp L          &kp U         &kp Y         &kp SQT       &none
-&none  &hml LGUI A   &hml LALT R  &hml LCTRL S  &hml LSHIFT T  &kp G                    &none     &none      &none      &kp M          &hmr RSHIFT N  &hmr RCTRL E  &hmr RALT I   &hmr RGUI O   &none
+&none  &hml LCTRL A  &hml LALT R  &hml LGUI S   &hml LSHIFT T  &kp G                    &none     &none      &none      &kp M          &hmr RSHIFT N  &hmr RGUI E   &hmr RALT I   &hmr RCTRL O  &none
 &none  &kp Z         &kp X        &kp C         &kp D          &kp V       &none                  &none                 &kp K          &kp H          &kp COMMA     &kp DOT       &kp FSLH      &none
                                  &kp ESC       &mo 2          &kp SPACE                                            &kp ENTER      &mo 1          &kp BSPC
             >;
