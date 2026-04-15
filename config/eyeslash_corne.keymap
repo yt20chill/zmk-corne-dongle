@@ -76,14 +76,16 @@
 
         combo_term_copy {
             timeout-ms = <50>;
-            key-positions = <16 30>; // S and C keys
+            key-positions = <16 31>; // S and C keys
             bindings = <&kp LC(LS(C))>;
+            layers = <0>;
         };
 
         combo_term_paste {
             timeout-ms = <50>;
-            key-positions = <18 32>; // G and V keys
+            key-positions = <18 33>; // G and V keys
             bindings = <&kp LC(LS(V))>;
+            layers = <0>;
         };
     };
 
