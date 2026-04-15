@@ -15,9 +15,9 @@ layers:
   - {t: '''', s: '"'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: A, h: LGUI}
+  - {t: A, h: '$$mdi:apple-keyboard-control$$'}
   - {t: R, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: S, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: S, h: LGUI}
   - {t: T, h: '$$mdi:apple-keyboard-shift$$'}
   - G
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -25,9 +25,9 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - M
   - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: E, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: E, h: RGUI}
   - {t: I, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: O, h: RGUI}
+  - {t: O, h: '$$mdi:apple-keyboard-control$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Z
@@ -199,7 +199,9 @@ layers:
 combos:
 - p: [1, 2, 3]
   k: {t: '$$mdi:power-standby$$', h: 2s}
-- p: [16, 30]
-  k: {t: '$$mdi:content-copy$$', s: TERM}
-- p: [18, 32]
-  k: {t: '$$mdi:content-paste$$', s: TERM}
+- p: [16, 31]
+  k: Gui+Sft+C
+  l: [COLEMAK]
+- p: [18, 33]
+  k: Gui+Sft+V
+  l: [COLEMAK]
