@@ -199,7 +199,9 @@ layers:
 combos:
 - p: [1, 2, 3]
   k: {t: '$$mdi:power-standby$$', h: 2s}
-- p: [16, 30]
+- p: [16, 31]
   k: {t: '$$mdi:content-copy$$', s: TERM}
-- p: [18, 32]
+  l: [COLEMAK]
+- p: [18, 33]
   k: {t: '$$mdi:content-paste$$', s: TERM}
+  l: [COLEMAK]
