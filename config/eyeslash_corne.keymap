@@ -82,6 +82,7 @@
             timeout-ms = <50>;
             key-positions = <1 2 3>; // Q, W, F keys
             bindings = <&so 0 0>;
+            layers = <0>;
         };
 
         combo_term_copy {
