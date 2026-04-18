@@ -1,7 +1,3 @@
-layout:
-  zmk_keyboard: eyeslash_corne
-  skip_indices: [0, 6, 12, 13, 19, 20, 21, 27, 28, 34, 35, 41]
-
 draw_config:
   n_columns: 1
   draw_key_sides: true
@@ -100,6 +96,11 @@ draw_config:
       visibility: hidden;
     }
 
+    /* Hide outer columns and middle keys for 3x5 layout */
+    .keypos-0, .keypos-6, .keypos-12, .keypos-13, .keypos-19, .keypos-20, .keypos-21, .keypos-27, .keypos-28, .keypos-34, .keypos-35, .keypos-41 {
+        display: none;
+    }
+
   shrink_wide_legends: 6
   glyph_tap_size: 18
   glyph_hold_size: 15
@@ -114,7 +115,6 @@ draw_config:
   use_local_cache: true
 
 parse_config:
-  skip_indices: [0, 6, 12, 13, 19, 20, 21, 27, 28, 34, 35, 41]
   mark_alternate_layer_activators: true
   sticky_label: $$mdi:gesture-tap-hold$$
   trans_legend:
@@ -124,6 +124,9 @@ parse_config:
   raw_binding_map:
     # Layers
     "&mo 1": SYM/NUM
+    "&lt 2 TAB":
+      tap: TAB
+      hold: NAV
     "&mo 2": NAV
     "&mo 3": FUN
     # Auto Shift
