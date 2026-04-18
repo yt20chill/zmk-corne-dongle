@@ -121,6 +121,11 @@ parse_config:
     "&mo 1": SYM/NUM
     "&mo 2": NAV
     "&mo 3": FUN
+    # Auto Shift
+    as:
+      bindings:
+        - tap: { index: 1 }
+          hold: { index: 0 }
     # Home rows (Left)
     "&hml LEFT_GUI A":
       tap: 'A'
