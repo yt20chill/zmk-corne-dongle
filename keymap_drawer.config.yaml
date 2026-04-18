@@ -1,3 +1,7 @@
+layout:
+  zmk_keyboard: eyeslash_corne
+  skip_indices: [0, 6, 12, 13, 19, 20, 21, 27, 28, 34, 35, 41]
+
 draw_config:
   n_columns: 1
   draw_key_sides: true
@@ -110,6 +114,7 @@ draw_config:
   use_local_cache: true
 
 parse_config:
+  skip_indices: [0, 6, 12, 13, 19, 20, 21, 27, 28, 34, 35, 41]
   mark_alternate_layer_activators: true
   sticky_label: $$mdi:gesture-tap-hold$$
   trans_legend:
