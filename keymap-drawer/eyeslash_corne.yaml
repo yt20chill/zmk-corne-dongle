@@ -51,53 +51,53 @@ layers:
   - {t: '$$mdi:backspace$$', type: backspace}
   SYM/NUM:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '1', s: '!'}
-  - {t: '2', s: '@'}
-  - {t: '3', s: '#'}
-  - {t: '4', s: $}
-  - {t: '5', s: '%'}
+  - {t: '1', h: '!', s: '!'}
+  - {t: '2', h: '@', s: '@'}
+  - {t: '3', h: '#', s: '#'}
+  - {t: '4', h: $, s: $}
+  - {t: '5', h: '%', s: '%'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '6', s: ^}
-  - {t: '7', s: '&'}
-  - {t: '8', s: '*'}
-  - {t: '9', s: (}
-  - {t: '0', s: )}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '!'
-  - '@'
-  - '#'
-  - $
-  - '%'
-  - {t: '-', s: _}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - _
-  - ^
-  - '&'
-  - '*'
-  - (
-  - )
+  - {t: '6', h: ^, s: ^}
+  - {t: '7', h: '&', s: '&'}
+  - {t: '8', h: '*', s: '*'}
+  - {t: '9', h: (, s: (}
+  - {t: '0', h: ), s: )}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '[', s: '{'}
-  - '{'
-  - (
-  - ':'
-  - {t: '=', s: +}
+  - {t: \, h: '|', s: '|'}
+  - {t: '=', h: +, s: +}
+  - {t: '-', h: _, s: _}
+  - {t: (, h: )}
+  - {t: '''', h: '"', s: '"'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - +
-  - {t: ;, s: ':'}
-  - )
-  - '}'
-  - {t: ']', s: '}'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: \, s: '|'}
-  - FUN
+  - {t: ;, h: ':', s: ':'}
+  - {t: /, h: '?', s: '?'}
+  - {t: '`', h: '~', s: '~'}
+  - {t: '[', h: '{', s: '{'}
+  - {t: ']', h: '}', s: '}'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - '|'
-  - {t: '`', s: '~'}
+  - +
+  - _
+  - '|'
+  - '"'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '~'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - ':'
+  - '&'
+  - '#'
+  - '{'
+  - '}'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - FUN
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   NAV:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:keyboard-tab$$
@@ -143,9 +143,9 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - FUN
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   FUN:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
