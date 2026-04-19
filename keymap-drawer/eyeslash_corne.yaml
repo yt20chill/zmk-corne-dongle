@@ -1,50 +1,50 @@
 layout: {zmk_keyboard: eyeslash_corne}
 layers:
-  COLEMAK:
+  GALLIUM:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - Q
-  - W
-  - F
-  - P
   - B
+  - L
+  - D
+  - C
+  - V
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - J
-  - L
-  - U
   - Y
+  - O
+  - U
   - {t: '''', s: '"'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: A, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: N, h: '$$mdi:apple-keyboard-control$$'}
   - {t: R, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: S, h: LGUI}
-  - {t: T, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: T, h: LGUI}
+  - {t: S, h: '$$mdi:apple-keyboard-shift$$'}
   - G
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - M
-  - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: E, h: RGUI}
-  - {t: I, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: O, h: '$$mdi:apple-keyboard-control$$'}
+  - P
+  - {t: H, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: A, h: RGUI}
+  - {t: E, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: I, h: '$$mdi:apple-keyboard-control$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - Z
   - X
-  - C
-  - D
-  - V
+  - Q
+  - M
+  - W
+  - Z
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - K
-  - H
+  - F
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:keyboard-esc$$
-  - {t: TAB, h: NAV}
+  - NAV
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - SYM/NUM
@@ -199,10 +199,10 @@ layers:
 combos:
 - p: [1, 2, 3]
   k: {t: '$$mdi:power-standby$$', h: 2s}
-  l: [COLEMAK]
+  l: [GALLIUM]
 - p: [16, 31]
   k: Gui+Sft+C
-  l: [COLEMAK]
+  l: [GALLIUM]
 - p: [18, 33]
   k: Gui+Sft+V
-  l: [COLEMAK]
+  l: [GALLIUM]
