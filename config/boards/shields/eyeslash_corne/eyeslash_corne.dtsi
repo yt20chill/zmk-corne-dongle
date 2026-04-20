@@ -47,21 +47,31 @@
         diode-direction = "col2row";
     };
 
-    /* Trigger for the Left Middle Thumb RC(3,4) */
+    /* 1. Define the physical pins as addressable labels */
+    buttons {
+        compatible = "gpio-keys";
+        left_thumb_row: left_thumb_row {
+            gpios = <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+            label = "Left Thumb Row";
+        };
+        right_thumb_row: right_thumb_row {
+            gpios = <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+            label = "Right Thumb Row";
+        };
+    };
+
+    /* 2. Point the triggers to those labels (Single phandle) */
     wakeup_left: wakeup_left {
         compatible = "zmk,gpio-key-wakeup-trigger";
-        trigger = <&kscan0 3 4>; 
+        trigger = <&left_thumb_row>; // This is now a single item!
         wakeup-source;
-        /* Column 4 is the 5th entry in your list: &gpio0 23 */
         extra-gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>; 
     };
 
-    /* Trigger for the Right Middle Thumb RC(3,7) */
     wakeup_right: wakeup_right {
         compatible = "zmk,gpio-key-wakeup-trigger";
-        trigger = <&kscan0 3 7>; 
+        trigger = <&right_thumb_row>; // This is now a single item!
         wakeup-source;
-        /* Column 7 is the 1st entry on the Right side: &gpio0 3 */
         extra-gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>; 
     };
 
