@@ -46,6 +46,39 @@
         wakeup-source;
         diode-direction = "col2row";
     };
+
+    /* 1. Define the physical pins as addressable labels */
+    buttons {
+        compatible = "gpio-keys";
+        left_thumb_row: left_thumb_row {
+            gpios = <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+            label = "Left Thumb Row";
+        };
+        right_thumb_row: right_thumb_row {
+            gpios = <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+            label = "Right Thumb Row";
+        };
+    };
+
+    /* 2. Point the triggers to those labels (Single phandle) */
+    wakeup_left: wakeup_left {
+        compatible = "zmk,gpio-key-wakeup-trigger";
+        trigger = <&left_thumb_row>; // This is now a single item!
+        wakeup-source;
+        extra-gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>; 
+    };
+
+    wakeup_right: wakeup_right {
+        compatible = "zmk,gpio-key-wakeup-trigger";
+        trigger = <&right_thumb_row>; // This is now a single item!
+        wakeup-source;
+        extra-gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>; 
+    };
+
+    soft_off_wakeup_sources {
+        compatible = "zmk,soft-off-wakeup-sources";
+        wakeup-sources = <&wakeup_left>, <&wakeup_right>;
+    };
     
     EXT_POWER {
         compatible = "zmk,ext-power-generic";

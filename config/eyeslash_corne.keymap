@@ -35,7 +35,7 @@
             display-name = "Auto Shift";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
+            quick-tap-ms = <50>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -46,9 +46,9 @@
             bindings = <&kp>, <&kp>;
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <250>;
-            flavor = "balanced";
+            quick-tap-ms = <100>;
+            // require-prior-idle-ms = <250>;
+            flavor = "tap-preferred";
             hold-trigger-key-positions = <7 8 9 10 11 22 23 24 25 26 36 37 38 39 40 46 47 48>;
             hold-trigger-on-release;
         };
@@ -59,31 +59,24 @@
             bindings = <&kp>, <&kp>;
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <250>;
-            flavor = "balanced";
-            hold-trigger-key-positions = <1 2 3 4 5 14 15 16 17 18 29 30 31 32 33 43 44 45>;
+            quick-tap-ms = <100>;
+            // require-prior-idle-ms = <250>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <0 1 2 3 4 5 13 14 15 16 17 18 29 30 31 32 33 34 35 43 44 45>;
             hold-trigger-on-release;
         };
 
-        so: soft_off_hold {
+        safe_soft_off: safe_soft_off {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <2000>;
-            flavor = "tap-preferred";
-            bindings = <&soft_off>, <&none>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <2000>; // Must hold for exactly 2 seconds
+            bindings = <&soft_off>, <&none>; 
         };
     };
 
     combos {
         compatible = "zmk,combos";
-
-        combo_soft_off {
-            timeout-ms = <50>;
-            key-positions = <1 2 3>; // Q, W, F keys
-            bindings = <&so 0 0>;
-            layers = <0>;
-        };
 
         combo_term_copy {
             timeout-ms = <50>;
@@ -138,7 +131,7 @@
             bindings = <
 &none  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                             &none                 &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &none
 &none  &kp F11       &none         &none         &none         &none                    &none     &none      &none      &none         &none         &none         &none         &kp F12       &none
-&none  &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none                &none                 &bootloader   &none         &none         &none         &none         &none
+&none  &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none                &none                 &bootloader   &soft_off         &none         &none         &none         &none
                                    &trans        &trans        &trans                                               &trans        &trans        &trans
             >;
         };
