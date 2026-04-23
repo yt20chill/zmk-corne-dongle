@@ -12,7 +12,7 @@ layers:
   - Y
   - O
   - U
-  - {t: '`', s: '~'}
+  - {t: '''', s: '"'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: N, h: '$$mdi:apple-keyboard-control$$'}
@@ -79,7 +79,7 @@ layers:
   - {t: ']', h: '}', s: '}'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '|'
+  - {t: '`', s: '~'}
   - +
   - _
   - '|'
