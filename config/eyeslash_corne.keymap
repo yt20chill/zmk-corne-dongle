@@ -27,6 +27,9 @@
     trigger-period-ms = <16>;
 };
 
+&soft_off {
+    hold-time-ms = <3000>;   // only turn off if the key is held for 3 s or longer
+};
 
 / {
     behaviors {
@@ -66,9 +69,6 @@
             hold-trigger-on-release;
         };
 
-        &soft_off {
-            hold-time-ms = <3000>   // only turn off if the key is held for 3 s or longer
-        }
     };
 
     combos {
