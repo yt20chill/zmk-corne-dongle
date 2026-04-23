@@ -99,7 +99,7 @@
         default_layer {
             display-name = "GALLIUM";
             bindings = <
-    &none  &kp B         &kp L        &kp D         &kp C          &kp V                              &none                 &kp J          &kp Y          &kp O         &kp U         &kp GRAVE     &none
+    &none  &kp B         &kp L        &kp D         &kp C          &kp V                              &none                 &kp J          &kp Y          &kp O         &kp U         &kp SQT     &none
     &none  &hml LCTRL N  &hml LALT R  &hml LGUI T   &hml LSHIFT S  &kp G                    &none     &none      &none      &kp P          &hmr RSHIFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I  &none
     &none  &kp X         &kp Q        &kp M         &kp W          &kp Z       &none                  &none                 &kp K          &kp F          &kp COMMA     &kp DOT       &kp FSLH      &none
                                  &kp ESC       &as TAB SPACE         &mo 2                                                     &mo 1      &kp BSPC          &kp ENTER
@@ -111,7 +111,7 @@
             bindings = <
 &none  &as EXCL N1    &as AT N2      &as HASH N3    &as DLLR N4    &as PRCNT N5                               &none                 &as CARET N6   &as AMPS N7    &as ASTRK N8   &as LPAR N9    &as RPAR N0    &none
 &none  &as PIPE BSLH  &as PLUS EQUAL &as UNDER MINUS&as RPAR LPAR  &as DQT SQT                  &none         &none      &none      &as COLON SEMI &as QMARK FSLH &as TILDE GRAVE &as LBRC LBKT  &as RBRC RBKT  &none
-&none  &kp PIPE       &kp PLUS       &kp UNDER      &kp PIPE       &kp DQT         &none                      &none                 &kp COLON      &kp AMPS       &kp HASH       &kp LBRC       &kp RBRC       &none
+&none  &kp GRAVE       &kp PLUS       &kp UNDER      &kp PIPE       &kp DQT         &none                      &none                 &kp COLON      &kp AMPS       &kp HASH       &kp LBRC       &kp RBRC       &none
                                      &trans          &trans          &mo 3                                         &trans          &trans          &trans
             >;
         };
