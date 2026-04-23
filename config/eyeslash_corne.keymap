@@ -111,7 +111,7 @@
             bindings = <
 &none  &as EXCL N1    &as AT N2      &as HASH N3    &as DLLR N4    &as PRCNT N5                               &none                 &as CARET N6   &as AMPS N7    &as ASTRK N8   &as LPAR N9    &as RPAR N0    &none
 &none  &as PIPE BSLH  &as PLUS EQUAL &as UNDER MINUS&as RPAR LPAR  &as DQT SQT                  &none         &none      &none      &as COLON SEMI &as QMARK FSLH &as TILDE GRAVE &as LBRC LBKT  &as RBRC RBKT  &none
-&none  &kp PIPE       &kp PLUS       &kp UNDER      &kp PIPE       &kp DQT         &none                      &none                 &kp COLON      &kp AMPS       &kp HASH       &kp LBRC       &kp RBRC       &none
+&none  &kp PIPE       &kp PLUS       &kp UNDER      &kp GRAVE       &kp DQT         &none                      &none                 &kp COLON      &kp AMPS       &kp HASH       &kp LBRC       &kp RBRC       &none
                                      &trans         &trans          &mo 3                                                       &trans          &trans          &trans
             >;
         };
