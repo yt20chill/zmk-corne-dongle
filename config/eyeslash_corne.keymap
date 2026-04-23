@@ -27,6 +27,9 @@
     trigger-period-ms = <16>;
 };
 
+&soft_off {
+    hold-time-ms = <3000>;   // only turn off if the key is held for 3 s or longer
+};
 
 / {
     behaviors {
@@ -66,13 +69,6 @@
             hold-trigger-on-release;
         };
 
-        safe_soft_off: safe_soft_off {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <2000>; // Must hold for exactly 2 seconds
-            bindings = <&soft_off>, <&none>; 
-        };
     };
 
     combos {
