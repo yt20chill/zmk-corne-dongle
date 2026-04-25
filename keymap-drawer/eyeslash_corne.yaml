@@ -44,9 +44,9 @@ layers:
   - {t: /, s: '?'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:keyboard-esc$$
-  - {t: '$$mdi:keyboard-space$$', h: FUN}
-  - {t: '-', h: NAV, s: _}
-  - {t: '$$mdi:keyboard-return$$', h: SYM/NUM}
+  - {t: ' ', h: NAV}
+  - {t: '-', h: NUM}
+  - SYM
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
   SYM:
@@ -125,7 +125,7 @@ layers:
   - '4'
   - '5'
   - '6'
-  - DASH
+  - {t: '-', s: _}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -214,8 +214,8 @@ layers:
   - F11
   - RGB BRI
   - RGB BRD
-  - RGB EFF
   - RGB TOG
+  - RGB EFF
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -226,23 +226,23 @@ layers:
   - F12
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:bluetooth-off$$
   - {h: '4', s: '$$mdi:bluetooth-connect$$'}
   - {h: '3', s: '$$mdi:bluetooth-connect$$'}
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
+  - $$mdi:progress-download$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:progress-download$$
   - '&soft_off'
+  - $$mdi:bluetooth-off$$
   - RGB COLOR HSB(190,100,10)
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
-  - {type: held alternate}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
