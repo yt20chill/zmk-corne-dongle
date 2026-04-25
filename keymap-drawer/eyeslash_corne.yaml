@@ -246,9 +246,15 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
-- p: [4, 8]
+- p: [4, 17]
   k: Gui+Sft+C
   l: [GALLIUM]
-- p: [5, 7]
+- p: [5, 18]
   k: Gui+Sft+V
+  l: [GALLIUM]
+- p: [29, 40]
+  k: $$mdi:alpha-w-box$$
+  l: [GALLIUM]
+- p: [14, 26]
+  k: $$mdi:keyboard-esc$$
   l: [GALLIUM]
