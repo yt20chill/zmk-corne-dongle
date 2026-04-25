@@ -75,15 +75,29 @@
 
         combo_term_copy {
             timeout-ms = <50>;
-            key-positions = <4 8>; // Y and C keys
+            key-positions = <4 17>; // top/home index
             bindings = <&kp LG(LS(C))>;
             layers = <0>;
         };
 
         combo_term_paste {
             timeout-ms = <50>;
-            key-positions = <5 7>; // J and V keys
+            key-positions = <5 18>; // top/home inner
             bindings = <&kp LG(LS(V))>;
+            layers = <0>;
+        };
+
+        combo_caps_word {
+            timeout-ms = <50>;
+            key-positions = <29 40>;  // bottom pinkies
+            bindings = <&caps_word>;
+            layers = <0>;
+        };
+
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <14 26>; // home pinkies
+            bindings = <&kp ESC>;
             layers = <0>;
         };
     };
