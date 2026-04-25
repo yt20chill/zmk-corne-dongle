@@ -98,36 +98,46 @@
     &none  &kp B         &kp L        &kp D         &kp C          &kp V                              &none                 &kp J          &kp Y          &kp O         &kp U         &kp SQT     &none
     &none  &hml LCTRL N  &hml LALT R  &hml LGUI T   &hml LSHIFT S  &kp G                    &none     &none      &none      &kp P          &hmr RSHIFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I  &none
     &none  &kp X         &kp Q        &kp M         &kp W          &kp Z       &none                  &none                 &kp K          &kp F          &kp COMMA     &kp DOT       &kp FSLH      &none
-                                 &kp ESC       &as TAB SPACE         &lt 2 MINUS                                                     &lt 1 ENTER      &kp BSPC          &kp ENTER
+                                 &kp ESC       &lt 3 SPACE         &lt 2 MINUS                                                     &lt 1 ENTER      &kp BSPC          &kp TAB
             >;
         };
 
-        sym_num_layer {
-            display-name = "SYM/NUM";
+        sym_layer {
+            display-name = "SYM";
             bindings = <
-&none  &as EXCL N1    &as AT N2      &as HASH N3    &as DLLR N4    &as PRCNT N5                               &none                 &as CARET N6   &as AMPS N7    &as ASTRK N8   &as LPAR N9    &as RPAR N0    &none
-&none  &as PIPE BSLH  &as PLUS EQUAL &as UNDER MINUS &as RPAR LPAR  &as DQT SQT                  &none         &none      &none      &as COLON SEMI &as QMARK FSLH &as TILDE GRAVE &as LBRC LBKT  &as RBRC RBKT  &none
-&none  &kp GRAVE       &kp PLUS       &kp UNDER      &kp PIPE       &kp DQT         &none                      &none                 &kp COLON      &kp AMPS       &kp HASH       &kp LBRC       &kp RBRC       &none
-                                     &trans          &trans          &mo 3                                         &trans          &trans          &trans
+    &none  &kp GRAVE  &kp TILDE  &kp HASH   &kp AMPS   &kp PIPE                       &none             &kp CARET  &kp LBRC   &kp RBRC   &kp LBKT   &kp RBKT  &none
+    &none  &kp EXCL   &kp UNDER  &kp COLON  &kp EQUAL  &kp DLLR                &none  &none  &none      &kp AT     &kp LPAR   &kp RPAR   &kp UNDER  &kp SEMI  &none
+    &none  &kp PRCNT  &kp QMARK  &kp ASTRK  &kp PLUS   &kp BSLH  &none                &none             &kp FSLH   &kp MINUS  &kp LT     &kp GT     &kp DQT   &none
+                                    &trans     &trans     &mo 4                               &trans     &trans     &trans
+                >;
+            };
+
+        num_layer {
+            display-name = "NUM";
+            bindings = <
+    &none  &none        &none  &none   &none      &none                              &none                 &kp FSLH         &kp 7   &kp 8   &kp 9   &kp ASTRK       &none
+    &none  &none        &none  &none   &kp LSHIFT &none                    &none     &none      &none      &kp DOT          &kp 4   &kp 5   &kp 6   &kp DASH        &none
+    &none  &none        &none  &none   &none      &none    &none                     &none                 &as COMMA UNDER  &kp 1   &kp 2   &kp 3   &as PLUS EQUAL  &none
+                                     &trans          &trans          &trans                        &mo 4          &trans          &kp 0
             >;
         };
 
         nav_layer {
             display-name = "NAV";
             bindings = <
-&none  &kp TAB      &none       &none        &none         &none                              &none                 &none         &none         &none        &none       &none        &none
-&none  &kp LCTRL     &kp LALT    &kp LGUI    &kp LSHIFT    &none                    &none     &none      &none      &none         &kp LEFT      &kp DOWN     &kp UP      &kp RIGHT    &none
-&none  &none         &none        &none      &none         &none       &none                  &none                 &none         &kp HOME      &kp PG_DN    &kp PG_UP   &kp END      &none
-                                    &trans       &trans        &trans                                               &mo 3        &trans        &trans
-            >;
-        };
+    &none  &kp CARET      &none       &none      &kp DOLLAR      &none                                &none                 &none         &kp LBRC         &kp RBRC        &kp LBKT       &kp RBKT        &none
+    &none  &kp LCTRL     &kp LALT    &kp LGUI    &kp LSHIFT    &kp PRCNT                    &none     &none      &none      &none      &kp LEFT      &kp DOWN     &kp UP      &kp RIGHT    &none
+    &none  &none         &none        &none      &none         &none       &none                      &none                 &none         &kp HOME      &kp PG_DN    &kp PG_UP   &kp END      &none
+                                        &trans       &trans        &trans                                                &trans        &trans        &trans
+                >;
+            };
 
         fun_layer {
             display-name = "FUN";
             bindings = <
-&none  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                             &none                 &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &none
-&none  &kp F11       &none         &none         &none         &none                    &none     &none      &none      &rgb_ug RGB_TOG         &rgb_ug RGB_EFF       &rgb_ug RGB_BRD         &rgb_ug RGB_BRI         &kp F12       &none
-&none  &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none                &none                 &bootloader   &soft_off         &rgb_ug RGB_COLOR_HSB(190,100,10)         &none         &none         &none
+&none  &kp F1    &kp F2        &kp F3        &kp F4        &kp F5                                       &none                 &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &none
+&none  &kp F11   &rgb_ug RGB_BRI   &rgb_ug RGB_BRD   &rgb_ug RGB_EFF  &rgb_ug RGB_TOG         &none     &none      &none      &none        &none       &none         &none         &kp F12       &none
+&none  &bt BT_CLR    &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &none                      &none                 &bootloader   &soft_off         &rgb_ug RGB_COLOR_HSB(190,100,10)         &none         &none         &none
                                    &trans        &trans        &trans                                               &trans        &trans        &trans
             >;
         };
