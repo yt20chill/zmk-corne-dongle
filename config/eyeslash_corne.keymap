@@ -89,6 +89,15 @@
         };
     };
 
+    // macros {
+    //    ph: placeholder {
+    //     compatible = "zmk,behavior-macro";
+    //     #binding-cells = <0>;
+    //     bindings
+    //         = <&macro_tap &kp g &kp g>
+    //    } 
+    // }
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -141,5 +150,6 @@
                                    &trans        &trans        &trans                                               &trans        &trans        &trans
             >;
         };
+
     };
 };
