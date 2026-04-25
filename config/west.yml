@@ -2,10 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # - name: gpeye
-    #   url-base: https://github.com/GPeye
-    - name: dsifry # bongo cat nice nano
-      url-base: https://github.com/dsifry 
+    - name: gpeye
+      url-base: https://github.com/GPeye
+    # - name: dsifry # bongo cat nice nano
+    #   url-base: https://github.com/dsifry 
     - name: tokyo2006
       url-base: https://github.com/tokyo2006
     - name: englmaxi
@@ -14,8 +14,8 @@ manifest:
     # - name: hammerbeam-slideshow
     #   remote: gpeye
     #   revision: main 
-    - name: nice-view-mod
-      remote: dsifry
+    - name: urchin-peripheral-animation
+      remote: gpeye
       revision: main
     - name: zmk
       remote: zmkfirmware
