@@ -123,12 +123,12 @@ parse_config:
 
   raw_binding_map:
     # Layers
-    "&mo 1": SYM/NUM
-    "&lt 2 TAB":
-      tap: TAB
-      hold: NAV
-    "&mo 2": NAV
-    "&mo 3": FUN
+    "&lt 1 ENTER": SYM
+    "&lt 2 MINUS":
+      tap: MINUS
+      hold: NUM
+    "&mo 3": NAV
+    "&mo 4": FUN
     # Auto Shift
     as:
       bindings:
