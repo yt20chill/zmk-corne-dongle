@@ -122,11 +122,18 @@ parse_config:
     type: trans
 
   raw_binding_map:
-    # Layers
+    # Layer Taps
     "&lt 1 ENTER": SYM
-    "&lt 2 MINUS":
-      tap: MINUS
+    "&lt 2 MINUS": 
+      tap: "-"
       hold: NUM
+    "&lt 3 SPACE": 
+      tap: " "
+      hold: NAV
+
+    # Momentary Layers
+    "&mo 1": SYM
+    "&mo 2": NUM
     "&mo 3": NAV
     "&mo 4": FUN
     # Auto Shift
