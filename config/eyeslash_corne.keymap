@@ -149,7 +149,7 @@
             bindings = <
     &none  &kp CARET      &none       &none      &kp DOLLAR      &none                                &none                 &none         &kp LBRC         &kp RBRC        &kp LBKT       &kp RBKT        &none
     &none  &kp LCTRL     &kp LALT    &kp LGUI    &kp LSHIFT    &kp PRCNT                    &none     &none      &none      &none      &kp LEFT      &kp DOWN     &kp UP      &kp RIGHT    &none
-    &none  &none         &none        &none      &none         &none       &none                      &none                 &none         &kp HOME      &kp PG_DN    &kp PG_UP   &kp END      &none
+    &none  &none         &none        &none      &none         &none       &none                      &none                 &none         &kp LA(LEFT_ARROW)      &kp PG_DN    &kp PG_UP   &kp LA(RIGHT_ARROW)      &none
                                         &trans       &trans        &trans                                                &trans        &trans        &trans
                 >;
             };
