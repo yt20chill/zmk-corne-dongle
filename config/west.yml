@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/GPeye
     # - name: dsifry # bongo cat nice nano
     #   url-base: https://github.com/dsifry 
+    - name: m165437
+      url-base: https://github.com/M165437
     - name: tokyo2006
       url-base: https://github.com/tokyo2006
     - name: englmaxi
@@ -14,9 +16,12 @@ manifest:
     # - name: hammerbeam-slideshow
     #   remote: gpeye
     #   revision: main 
-    - name: urchin-peripheral-animation
-      remote: gpeye
-      revision: main
+    # - name: urchin-peripheral-animation
+    #   remote: gpeye
+    #   revision: main
+    - name: nice-view-gem
+      remote: m165437
+      revision: v0.3.0
     - name: zmk
       remote: zmkfirmware
       revision: v0.3.0

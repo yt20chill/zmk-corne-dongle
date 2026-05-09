@@ -108,7 +108,7 @@
     //     #binding-cells = <0>;
     //     bindings
     //         = <&macro_tap &kp g &kp g>
-    //    } 
+    //    }
     // }
 
     keymap {
