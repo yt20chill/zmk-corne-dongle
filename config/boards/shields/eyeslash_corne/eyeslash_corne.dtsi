@@ -63,14 +63,14 @@
     /* 2. Point the triggers to those labels (Single phandle) */
     wakeup_left: wakeup_left {
         compatible = "zmk,gpio-key-wakeup-trigger";
-        trigger = <&left_thumb_row>; // This is now a single item!
+        trigger = <&left_thumb_row>;
         wakeup-source;
-        extra-gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>; 
+        extra-gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
     };
 
     wakeup_right: wakeup_right {
         compatible = "zmk,gpio-key-wakeup-trigger";
-        trigger = <&right_thumb_row>; // This is now a single item!
+        trigger = <&right_thumb_row>;
         wakeup-source;
         extra-gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>; 
     };
