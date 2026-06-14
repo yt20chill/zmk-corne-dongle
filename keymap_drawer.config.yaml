@@ -123,63 +123,19 @@ parse_config:
     type: trans
 
   raw_binding_map:
-    # Layer Taps
-    "&lt 1 ENTER": SYM
-    "&lt 2 MINUS": 
-      tap: "-"
-      hold: NUM
-    "&lt 3 SPACE": 
-      tap: " "
-      hold: NAV
+    "&num_dance": { "t": "Smart" }
 
-    # Momentary Layers
-    "&mo 1": SYM
-    "&mo 2": NUM
-    "&mo 3": NAV
-    "&mo 4": FUN
-    # Auto Shift
-
-    # Home rows (Left)
-    "&hml LEFT_GUI A":
-      tap: 'A'
-      shifted: $$mdi:apple-keyboard-command$$
-    "&hml LEFT_ALT R":
-      tap: 'R'
-      shifted: $$mdi:apple-keyboard-option$$
-    "&hml LEFT_CONTROL S":
-      tap: 'S'
-      shifted: $$mdi:apple-keyboard-control$$
-    "&hml LEFT_SHIFT T":
-      tap: 'T'
-      shifted: $$mdi:apple-keyboard-shift$$
-    # Home rows (Right)
-    "&hmr RIGHT_SHIFT N":
-      tap: 'N'
-      shifted: $$mdi:apple-keyboard-shift$$
-    "&hmr RIGHT_CONTROL E":
-      tap: 'E'
-      shifted: $$mdi:apple-keyboard-control$$
-    "&hmr RIGHT_ALT I":
-      tap: 'I'
-      shifted: $$mdi:apple-keyboard-option$$
-    "&hmr RIGHT_GUI O":
-      tap: 'O'
-      shifted: $$mdi:apple-keyboard-command$$
     # Soft Off
     "&so 0 0":
       tap: $$mdi:power-standby$$
       hold: "3s"
     # Terminal Combos
-    "&kp LC(LS(C))":
+    "&kp LG(LS(C))":
       tap: $$mdi:content-copy$$
       shifted: "TERM"
-    "&kp LC(LS(V))":
+    "&kp LG(LS(V))":
       tap: $$mdi:content-paste$$
       shifted: "TERM"
-    # self behaviors
-    "&hm LG(LS(V)) P":
-      tap: 'P'
-      shifted: $$mdi:content-copy$$
     # Mouse
     "&msc SCRL_UP":
       tap: $$mdi:pan-up$$
@@ -543,37 +499,9 @@ parse_config:
       hold: zoom
 
   zmk_combos:
-    combo_to_2:
-      align: top
-    combo_to_3:
-      align: top
     combo_bt_clear:
       align: top
       offset: 0.03
     combo_mute:
       align: top
       offset: 0.15
-    combo_minus:
-      key:
-        shifted: "_"
-        hold: "-"
-    combo_equal:
-      key:
-        shifted: "+"
-        hold: "="
-    combo_backslash:
-      key:
-        shifted: "|"
-        hold: \
-    combo_lbkt:
-      key:
-        shifted: "{"
-        hold: "["
-    combo_rbkt:
-      key:
-        shifted: "}"
-        hold: "]"
-    combo_semicolon:
-      key:
-        shifted: ":"
-        hold: ";"
