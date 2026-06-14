@@ -246,15 +246,17 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
-- p: [4, 17]
+- p: [2, 3]
   k: Gui+Sft+C
-  l: [GALLIUM]
-- p: [5, 18]
+- p: [3, 4]
   k: Gui+Sft+V
-  l: [GALLIUM]
-- p: [29, 40]
-  k: $$mdi:alpha-w-box$$
-  l: [GALLIUM]
+- p: [30, 31]
+  k: {t: C, h: '$$mdi:apple-keyboard-command$$'}
+- p: [31, 32]
+  k: {t: V, h: '$$mdi:apple-keyboard-command$$'}
+- p: [30, 32]
+  k: {t: X, h: '$$mdi:apple-keyboard-command$$'}
 - p: [14, 26]
   k: $$mdi:keyboard-esc$$
-  l: [GALLIUM]
+- p: [29, 40]
+  k: $$mdi:alpha-w-box$$
