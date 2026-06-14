@@ -4,8 +4,12 @@
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
-#include <zmk-helpers/helper.h>
-#include <zmk-helpers/key-labels/eyelash42.h>
+
+// urobs helpers
+#include <behaviors/num_word.dtsi>  // requires zmk-auto-layer module
+#include <zmk-helpers/helper.h> // requires zmk-helpers module
+#include "eyelash42.h"   // before dt-bindings/keys.h
+
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
@@ -13,6 +17,26 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
+#define DEF 0
+#define SYM 1
+#define NUM 2
+#define NAV 3
+#define FUN 4
+
+#define XXX &none
+#define ___ &trans
+
+#define QUICK_TAP_MS 175
+
+&lt {
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+};
+
+&sl { // Allow sticky mods to chord across sticky layers.
+  ignore-modifiers;
+};
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 
@@ -34,136 +58,96 @@
     hold-time-ms = <3000>;   // only turn off if the key is held for 3 s or longer
 };
 
+#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
+  ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";            \
+               tapping-term-ms = <280>; quick-tap-ms = <QUICK_TAP_MS>;         \
+               require-prior-idle-ms = <150>; hold-trigger-on-release;         \
+               hold-trigger-key-positions = <TRIGGER_POS>;)
+
+MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
+MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
+
+// Hack: Make HRM combos tap-only
+#define ZMK_COMBO_8(NAME, TAP, POS, LAYERS, COMBO_MS, IDLE_MS, HOLD, SIDE)     \
+  MAKE_HRM(hm_combo_##NAME, &kp, TAP, SIDE THUMBS)                             \
+  ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
+
+
+ZMK_HOLD_TAP(ht, bindings = <&kp>, <&kp>; flavor = "balanced";                \
+             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;          \
+             require-prior-idle-ms = <150>;)
+
+// smart_num = CAPS_WORD on num
+// Tap: num-word | double-tap: sticky num-layer | Hold: num-layer.
+#define SMART_NUM &smart_num NUM 0
+ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
+             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
+              tapping-term-ms = <200>;)
+
+
+// left vertical shortcuts
+ZMK_COMBO(term_copy, &kp LG(LS(C)), LT3 LT2) // top ring + middle
+ZMK_COMBO(term_paste, &kp LG(LS(V)), LT2 LT1)    // top middle + index
+ZMK_COMBO(copy, &kp LG(C), LB3 LB2)  // bottom ring + middle
+ZMK_COMBO(paste, &kp LG(V), LB2 LB1) // bottom middle + index
+ZMK_COMBO(cut, &kp LG(X), LB3 LB1)   // bottom ring + index
+
+// symmetric shortcuts
+ZMK_COMBO(esc, &kp ESC, LM4 RM4) // home pinkies
+ZMK_COMBO(caps_word, &caps_word, LB4 RB4)    // bottom pinkies
+
 / {
-    behaviors {
-        as: auto_shift {
-            compatible = "zmk,behavior-hold-tap";
-            display-name = "Auto Shift";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <50>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
-        hml: homerow_mods_left {
-            compatible = "zmk,behavior-hold-tap";
-            display-name = "Homerow Mods Left";
-            bindings = <&kp>, <&kp>;
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
-            flavor = "balanced";
-            hold-trigger-key-positions = <7 8 9 10 11 12 22 23 24 25 26 27 36 37 38 39 40 41 45 46 47>;
-            hold-trigger-on-release;
-        };
-
-        hmr: homerow_mods_right {
-            compatible = "zmk,behavior-hold-tap";
-            display-name = "Homerow Mods Right";
-            bindings = <&kp>, <&kp>;
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
-            flavor = "balanced";
-            hold-trigger-key-positions = <0 1 2 3 4 5 13 14 15 16 17 18 28 29 30 31 32 33 42 43 44>;
-            hold-trigger-on-release;
-        };
-    };
-
-    combos {
-        compatible = "zmk,combos";
-
-        combo_term_copy {
-            timeout-ms = <50>;
-            key-positions = <4 17>; // top/home index
-            bindings = <&kp LG(LS(C))>;
-            layers = <0>;
-        };
-
-        combo_term_paste {
-            timeout-ms = <50>;
-            key-positions = <5 18>; // top/home inner
-            bindings = <&kp LG(LS(V))>;
-            layers = <0>;
-        };
-
-        combo_caps_word {
-            timeout-ms = <50>;
-            key-positions = <29 40>;  // bottom pinkies
-            bindings = <&caps_word>;
-            layers = <0>;
-        };
-
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <14 26>; // home pinkies
-            bindings = <&kp ESC>;
-            layers = <0>;
-        };
-    };
-
-    // macros {
-    //    ph: placeholder {
-    //     compatible = "zmk,behavior-macro";
-    //     #binding-cells = <0>;
-    //     bindings
-    //         = <&macro_tap &kp g &kp g>
-    //    }
-    // }
-
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "GALLIUM";
             bindings = <
-    &none  &kp B         &kp L        &kp D         &kp C          &kp V                              &none                 &kp J          &kp Y          &kp O         &kp U         &kp SQT     &none
-    &none  &hml LCTRL N  &hml LALT R  &hml LGUI T   &hml LSHIFT S  &kp G                    &none     &none      &none      &kp P          &hmr RSHIFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I  &none
-    &none  &kp X         &kp Q        &kp M         &kp W          &kp Z       &none                  &none                 &kp K          &kp F          &kp COMMA     &kp DOT       &kp FSLH      &none
-                                 &kp ESC       &lt 3 SPACE         &lt 2 MINUS                                                     &lt 1 ENTER      &kp BSPC          &kp TAB
+    XXX  &kp B         &kp L        &kp D         &kp C          &kp V                              XXX                 &kp J          &kp Y          &kp O         &kp U         &kp SQT     XXX
+    XXX  &hml LCTRL N  &hml LALT R  &hml LGUI T   &hml LSHIFT S  &kp G                    XXX     XXX      XXX      &kp P          &hmr RSHIFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I  XXX
+    XXX  &kp X         &kp Q        &kp M         &kp W          &kp Z       XXX                  XXX                 &kp K          &kp F          &kp COMMA     &kp DOT       &kp FSLH      XXX
+                                 &kp ESC       &lt NAV SPACE         &lt NUM MINUS                                                     &lt SYM ENTER      &kp BSPC          &kp TAB
             >;
         };
 
         sym_layer {
             display-name = "SYM";
             bindings = <
-    &none  &kp GRAVE  &kp TILDE  &kp HASH   &kp AMPS   &kp PIPE                       &none             &kp CARET  &kp LBRC   &kp RBRC   &kp LBKT   &kp RBKT  &none
-    &none  &kp EXCL   &kp UNDER  &kp COLON  &kp EQUAL  &kp DLLR                &none  &none  &none      &kp AT     &kp LPAR   &kp RPAR   &kp UNDER  &kp SEMI  &none
-    &none  &kp PRCNT  &kp QMARK  &kp ASTRK  &kp PLUS   &kp BSLH  &none                &none             &kp FSLH   &kp MINUS  &kp LT     &kp GT     &kp DQT   &none
-                                    &trans     &trans     &mo 4                               &trans     &trans     &trans
+    XXX  &kp GRAVE  &kp TILDE  &kp HASH   &kp AMPS   &kp PIPE                       XXX             &kp CARET  &kp LBRC   &kp RBRC   &kp LBKT   &kp RBKT  XXX
+    XXX  &kp EXCL   &kp UNDER  &kp COLON  &kp EQUAL  &kp DLLR                XXX  XXX  XXX      &kp AT     &kp LPAR   &kp RPAR   &kp UNDER  &kp SEMI  XXX
+    XXX  &kp PRCNT  &kp QMARK  &kp ASTRK  &kp PLUS   &kp BSLH  XXX                XXX             &kp FSLH   &kp MINUS  &kp LT     &kp GT     &kp DQT   XXX
+                                    ___     ___     &mo FUN                               ___     ___     ___
                 >;
             };
 
         num_layer {
             display-name = "NUM";
             bindings = <
-    &none  &none        &none  &none   &none      &none                              &none                 &kp FSLH         &kp N7   &kp N8   &kp N9   &kp ASTRK       &none
-    &none  &none        &none  &none   &kp LSHIFT &none                    &none     &none      &none      &kp DOT          &kp N4   &kp N5   &kp N6   &kp MINUS        &none
-    &none  &none        &none  &none   &none      &none    &none                     &none                 &as COMMA UNDER  &kp N1   &kp N2   &kp N3   &as PLUS EQUAL  &none
-                                     &trans          &trans          &trans                        &mo 4          &trans          &kp 0
+    XXX  XXX        XXX  XXX   XXX      XXX                              XXX                 &kp FSLH         &kp N7   &kp N8   &kp N9   &kp ASTRK       XXX
+    XXX  XXX        XXX  XXX   &kp LSHIFT XXX                    XXX     XXX      XXX      &kp DOT          &kp N4   &kp N5   &kp N6   &kp MINUS        XXX
+    XXX  XXX        XXX  XXX   XXX      XXX    XXX                     XXX                 &ht COMMA UNDER  &kp N1   &kp N2   &kp N3   &ht PLUS EQUAL  XXX
+                                     ___          ___          ___                        &mo FUN          ___          &kp 0
             >;
         };
 
         nav_layer {
             display-name = "NAV";
             bindings = <
-    &none  &kp CARET      &none       &none      &kp DOLLAR      &none                                &none                 &none         &kp LBRC         &kp RBRC        &kp LBKT       &kp RBKT        &none
-    &none  &kp LCTRL     &kp LALT    &kp LGUI    &kp LSHIFT    &kp PRCNT                    &none     &none      &none      &none      &kp LEFT      &kp DOWN     &kp UP      &kp RIGHT    &none
-    &none  &none         &none        &none      &none         &none       &none                      &none                 &none         &kp LA(LEFT_ARROW)      &kp PG_DN    &kp PG_UP   &kp LA(RIGHT_ARROW)      &none
-                                        &trans       &trans        &trans                                                &trans        &trans        &trans
+    XXX  &kp CARET      XXX       XXX      &kp DOLLAR      XXX                                XXX                 XXX         &kp LBRC         &kp RBRC        &kp LBKT       &kp RBKT        XXX
+    XXX  &kp LCTRL     &kp LALT    &kp LGUI    &kp LSHIFT    &kp PRCNT                    XXX     XXX      XXX      XXX      &kp LEFT      &kp DOWN     &kp UP      &kp RIGHT    XXX
+    XXX  XXX         XXX        XXX      XXX         XXX       XXX                      XXX                 XXX         &kp LA(LEFT_ARROW)      &kp PG_DN    &kp PG_UP   &kp LA(RIGHT_ARROW)      XXX
+                                        ___       ___        ___                                                ___        ___        ___
                 >;
             };
 
         fun_layer {
             display-name = "FUN";
             bindings = <
-    &none  &kp F1    &kp F2        &kp F3        &kp F4        &kp F5                                       &none                 &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &none
-    &none  &kp F11   &rgb_ug RGB_BRI   &rgb_ug RGB_BRD     &rgb_ug RGB_TOG   &rgb_ug RGB_EFF      &none     &none  &none          &none        &none       &none         &none         &kp F12       &none
-    &none  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bootloader &none                        &none                 &bootloader   &soft_off    &bt BT_CLR     &rgb_ug RGB_COLOR_HSB(190,100,10)              &none         &none
-                                    &trans        &trans        &trans                                                      &trans        &trans        &trans
+    XXX  &kp F1    &kp F2        &kp F3        &kp F4        &kp F5                                       XXX                 &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       XXX
+    XXX  &kp F11   &rgb_ug RGB_BRI   &rgb_ug RGB_BRD     &rgb_ug RGB_TOG   &rgb_ug RGB_EFF      XXX     XXX  XXX          XXX        XXX       XXX         XXX         &kp F12       XXX
+    XXX  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bootloader XXX                        XXX                 &bootloader   &soft_off    &bt BT_CLR     &rgb_ug RGB_COLOR_HSB(190,100,10)              XXX         XXX
+                                    ___        ___        ___                                                      ___        ___        ___
             >;
         };
     };
