@@ -72,6 +72,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
   MAKE_HRM(hm_combo_##NAME, &kp, TAP, SIDE THUMBS)                             \
   ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
 
+#include "combos.dtsi"
 
 ZMK_HOLD_TAP(ht, bindings = <&kp>, <&kp>; flavor = "balanced";                \
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;          \
@@ -85,18 +86,6 @@ ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
 ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
               tapping-term-ms = <200>;)
 
-
-// left vertical shortcuts
-ZMK_COMBO(term_copy, &kp LG(LS(C)), LT3 LT2) // top ring + middle
-ZMK_COMBO(term_paste, &kp LG(LS(V)), LT2 LT1)    // top middle + index
-ZMK_COMBO(copy, &kp LG(C), LB3 LB2)  // bottom ring + middle
-ZMK_COMBO(paste, &kp LG(V), LB2 LB1) // bottom middle + index
-ZMK_COMBO(cut, &kp LG(X), LB3 LB1)   // bottom ring + index
-
-// symmetric shortcuts
-ZMK_COMBO(esc, &kp ESC, LM4 RM4) // home pinkies
-ZMK_COMBO(caps_word, &caps_word, LB4 RB4)    // bottom pinkies
-
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -107,7 +96,7 @@ ZMK_COMBO(caps_word, &caps_word, LB4 RB4)    // bottom pinkies
     XXX  &kp B         &kp L        &kp D         &kp C          &kp V                              XXX                 &kp J          &kp Y          &kp O         &kp U         &kp SQT     XXX
     XXX  &hml LCTRL N  &hml LALT R  &hml LGUI T   &hml LSHIFT S  &kp G                    XXX     XXX      XXX      &kp P          &hmr RSHIFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I  XXX
     XXX  &kp X         &kp Q        &kp M         &kp W          &kp Z       XXX                  XXX                 &kp K          &kp F          &kp COMMA     &kp DOT       &kp FSLH      XXX
-                                 &kp ESC       &lt NAV SPACE         &lt NUM MINUS                                                     &lt SYM ENTER      &kp BSPC          &kp TAB
+                                 &kp MINUS       &lt NAV SPACE         SMART_NUM                                                     &lt SYM ENTER      &kp BSPC          &kp TAB
             >;
         };
 
