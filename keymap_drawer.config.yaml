@@ -115,6 +115,7 @@ draw_config:
   use_local_cache: true
 
 parse_config:
+  zmk_additional_includes: ["zmk-helpers/include"]
   mark_alternate_layer_activators: true
   sticky_label: $$mdi:gesture-tap-hold$$
   trans_legend:
@@ -137,10 +138,7 @@ parse_config:
     "&mo 3": NAV
     "&mo 4": FUN
     # Auto Shift
-    as:
-      bindings:
-        - tap: { index: 1 }
-          hold: { index: 0 }
+
     # Home rows (Left)
     "&hml LEFT_GUI A":
       tap: 'A'
@@ -170,7 +168,7 @@ parse_config:
     # Soft Off
     "&so 0 0":
       tap: $$mdi:power-standby$$
-      hold: "2s"
+      hold: "3s"
     # Terminal Combos
     "&kp LC(LS(C))":
       tap: $$mdi:content-copy$$
