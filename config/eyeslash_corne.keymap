@@ -93,50 +93,50 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
         default_layer {
             display-name = "GALLIUM";
             bindings = <
-    XXX  &kp B         &kp L        &kp D         &kp C          &kp V                              XXX                 &kp J          &kp Y          &kp O         &kp U         &kp SQT     XXX
-    XXX  &hml LCTRL N  &hml LALT R  &hml LGUI T   &hml LSHIFT S  &kp G                    XXX     XXX      XXX      &kp P          &hmr RSHIFT H  &hmr RGUI A   &hmr RALT E   &hmr RCTRL I  XXX
-    XXX  &kp X         &kp Q        &kp M         &kp W          &kp Z       XXX                  XXX                 &kp K          &kp F          &kp COMMA     &kp DOT       &kp FSLH      XXX
-                                 &kp MINUS       &lt NAV SPACE         SMART_NUM                                                     &lt SYM ENTER      &kp BSPC          &kp TAB
+        &kp B         &kp L        &kp D        &kp C          &kp V             &kp J          &kp Y          &kp O        &kp U        &kp SQT
+        &hml LCTRL N  &hml LALT R  &hml LGUI T  &hml LSHIFT S  &kp G             &kp P          &hmr RSHIFT H  &hmr RGUI A  &hmr RALT E  &hmr RCTRL I
+        &kp X         &kp Q        &kp M        &kp W          &kp Z             &kp K          &kp F          &kp COMMA    &kp DOT      &kp FSLH
+                               &kp MINUS    &lt NAV SPACE  SMART_NUM             &lt SYM ENTER  &kp BSPC       &kp TAB
             >;
         };
 
         sym_layer {
             display-name = "SYM";
             bindings = <
-    XXX  &kp GRAVE  &kp TILDE  &kp HASH   &kp AMPS   &kp PIPE                       XXX             &kp CARET  &kp LBRC   &kp RBRC   &kp LBKT   &kp RBKT  XXX
-    XXX  &kp EXCL   &kp UNDER  &kp COLON  &kp EQUAL  &kp DLLR                XXX  XXX  XXX      &kp AT     &kp LPAR   &kp RPAR   &kp UNDER  &kp SEMI  XXX
-    XXX  &kp PRCNT  &kp QMARK  &kp ASTRK  &kp PLUS   &kp BSLH  XXX                XXX             &kp FSLH   &kp MINUS  &kp LT     &kp GT     &kp DQT   XXX
-                                    ___     ___     &mo FUN                               ___     ___     ___
-                >;
-            };
+    &kp GRAVE  &kp TILDE  &kp HASH   &kp AMPS   &kp PIPE          &kp CARET  &kp LBRC   &kp RBRC   &kp LBKT   &kp RBKT
+    &kp EXCL   &kp UNDER  &kp COLON  &kp EQUAL  &kp DLLR          &kp AT     &kp LPAR   &kp RPAR   &kp UNDER  &kp SEMI
+    &kp PRCNT  &kp QMARK  &kp ASTRK  &kp PLUS   &kp BSLH          &kp FSLH   &kp MINUS  &kp LT     &kp GT     &kp DQT
+                          ___        ___        &mo FUN           ___        ___        ___
+            >;
+        };
 
         num_layer {
             display-name = "NUM";
             bindings = <
-    XXX  XXX        XXX  XXX   XXX      XXX                              XXX                 &kp FSLH         &kp N7   &kp N8   &kp N9   &kp ASTRK       XXX
-    XXX  XXX        XXX  XXX   &kp LSHIFT XXX                    XXX     XXX      XXX      &kp DOT          &kp N4   &kp N5   &kp N6   &kp MINUS        XXX
-    XXX  XXX        XXX  XXX   XXX      XXX    XXX                     XXX                 &ht COMMA UNDER  &kp N1   &kp N2   &kp N3   &ht PLUS EQUAL  XXX
-                                     ___          ___          ___                        &mo FUN          ___          &kp 0
+    XXX        XXX        XXX        XXX        XXX               &kp FSLH         &kp N7   &kp N8   &kp N9   &kp ASTRK
+    XXX        XXX        XXX        &kp LSHIFT XXX               &kp DOT          &kp N4   &kp N5   &kp N6   &kp MINUS
+    XXX        XXX        XXX        XXX        XXX               &ht COMMA UNDER  &kp N1   &kp N2   &kp N3   &ht PLUS EQUAL
+                          ___        ___        ___               &mo FUN      ___      &kp 0
             >;
         };
 
         nav_layer {
             display-name = "NAV";
             bindings = <
-    XXX  &kp CARET      XXX       XXX      &kp DOLLAR      XXX                                XXX                 XXX         &kp LBRC         &kp RBRC        &kp LBKT       &kp RBKT        XXX
-    XXX  &kp LCTRL     &kp LALT    &kp LGUI    &kp LSHIFT    &kp PRCNT                    XXX     XXX      XXX      XXX      &kp LEFT      &kp DOWN     &kp UP      &kp RIGHT    XXX
-    XXX  XXX         XXX        XXX      XXX         XXX       XXX                      XXX                 XXX         &kp LA(LEFT_ARROW)      &kp PG_DN    &kp PG_UP   &kp LA(RIGHT_ARROW)      XXX
-                                        ___       ___        ___                                                ___        ___        ___
-                >;
-            };
+    &kp CARET  XXX        XXX        &kp DOLLAR XXX               XXX          &kp LBRC          &kp RBRC     &kp LBKT     &kp RBKT
+    &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHIFT &kp PRCNT         XXX          &kp LEFT          &kp DOWN     &kp UP       &kp RIGHT
+    XXX        XXX        XXX        XXX        XXX               XXX          &kp LA(LEFT)      &kp PG_DN    &kp PG_UP    &kp LA(RIGHT)
+                          ___        ___        ___               ___          ___               ___
+            >;
+        };
 
         fun_layer {
             display-name = "FUN";
             bindings = <
-    XXX  &kp F1    &kp F2        &kp F3        &kp F4        &kp F5                                       XXX                 &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       XXX
-    XXX  &kp F11   &rgb_ug RGB_BRI   &rgb_ug RGB_BRD     &rgb_ug RGB_TOG   &rgb_ug RGB_EFF      XXX     XXX  XXX          XXX        XXX       XXX         XXX         &kp F12       XXX
-    XXX  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bootloader XXX                        XXX                 &bootloader   &soft_off    &bt BT_CLR     &rgb_ug RGB_COLOR_HSB(190,100,10)              XXX         XXX
-                                    ___        ___        ___                                                      ___        ___        ___
+    &kp F1        &kp F2          &kp F3          &kp F4          &kp F5            &kp F6        &kp F7        &kp F8        &kp F9        &kp F10
+    &kp F11       &rgb_ug RGB_BRI &rgb_ug RGB_BRD &rgb_ug RGB_TOG &rgb_ug RGB_EFF   XXX           XXX           XXX           XXX           &kp F12
+    &bt BT_SEL 3  &bt BT_SEL 2    &bt BT_SEL 1    &bt BT_SEL 0    &bootloader       &bootloader   &soft_off     &bt BT_CLR    &rgb_ug RGB_COLOR_HSB(190,100,10) XXX
+                                  ___             ___             ___               ___           ___           ___
             >;
         };
     };

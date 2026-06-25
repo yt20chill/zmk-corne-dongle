@@ -32,6 +32,10 @@
     col-offset = <7>;
 };
 
+&corne_5_transform {
+    col-offset = <7>;
+};
+
 &pinctrl {
 
     spi0_default: spi0_default {
